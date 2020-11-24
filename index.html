@@ -22,8 +22,11 @@
                 </div>
             </div>
             <div class="films-container">
-                <div class="">
-
+                <div v-for="films in list_films" class="box-film">
+                    <h2>{{ films.title }}</h2>
+                    <span class="">{{ films.original_title }}</span>
+                    <span class="">{{ films.original_language }}</span>
+                    <span class="">{{ films.vote_average }}</span>
                 </div>
             </div>
         </div>

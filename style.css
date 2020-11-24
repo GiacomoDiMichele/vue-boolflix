@@ -56,3 +56,19 @@ header img {
     color: white;
     border-radius: 3px;
 }
+
+.films-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: 200px;
+}
+
+.box-film {
+    width: 200px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
