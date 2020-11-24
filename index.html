@@ -17,8 +17,8 @@
             </header>
             <div class="research-container">
                 <div class="research-films">
-                    <input type="search" placeholder="Inserisci il nome del film" name="" value="">
-                    <button type="button" name="button"><i class="fas fa-search"></i></button>
+                    <input type="search"  v-model="search_films" placeholder="Inserisci il nome del film" name="" value="">
+                    <button type="button" @click="searchTypeFilms" name="button"><i class="fas fa-search"></i></button>
                 </div>
             </div>
             <div class="films-container">
