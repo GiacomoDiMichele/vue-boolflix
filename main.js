@@ -26,6 +26,13 @@ var app = new Vue ({
                });
                this.search_films = '';
              }
-            }
+         },
+        avgVoteStar(films) {
+            let number_vote = Math.floor(films.vote_average / 2);
+                return number_vote
+        },
+        emptyStar(films) {
+            let empty_vote = Math.floor(10 - films.vote_average)s
         }
-    });
+    }
+});
