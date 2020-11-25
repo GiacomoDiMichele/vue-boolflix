@@ -25,7 +25,9 @@
                 <ul v-for="films in list_films" class="box-film">
                     <li>{{ films.title }}</li>
                     <li class="">{{ films.original_title }}</li>
-                    <li class="">{{ films.original_language }}</li>
+                    <li class="image-language">
+                        <img :src="'img/' + films.original_language + '.png'" alt="">
+                    </li>
                     <li class="stars-vote">
                         <i v-for="i in avgVoteStar(films)" class="fas fa-star"></i>
                         <i v-for="i in emptyStar(films)" class="far fa-star"></i>

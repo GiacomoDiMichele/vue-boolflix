@@ -92,3 +92,13 @@ header img {
     align-items: center;
     flex-direction: column;
 }
+
+.image-language {
+    width: 20px;
+    height: 20px;
+}
+
+.image-language img {
+    height: 100%;
+    width: 100%;
+}
