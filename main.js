@@ -28,11 +28,13 @@ var app = new Vue ({
              }
          },
         avgVoteStar(films) {
-            let number_vote = Math.floor(films.vote_average / 2);
+            let number_vote = Math.round(films.vote_average / 2);
                 return number_vote
         },
         emptyStar(films) {
-            let empty_vote = Math.floor(10 - films.vote_average)s
+            let rest_vote = 10 - films.vote_average;
+            let number_rest_vote = Math.round(rest_vote / 2);
+            return number_rest_vote
         }
     }
 });

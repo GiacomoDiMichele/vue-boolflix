@@ -26,9 +26,9 @@
                     <li>{{ films.title }}</li>
                     <li class="">{{ films.original_title }}</li>
                     <li class="">{{ films.original_language }}</li>
-                    <li class="">
+                    <li class="stars-vote">
                         <i v-for="i in avgVoteStar(films)" class="fas fa-star"></i>
-                        <i v-for="i in 5" class="far fa-star"></i>
+                        <i v-for="i in emptyStar(films)" class="far fa-star"></i>
                     </li>
                 </ul>
             </div>
