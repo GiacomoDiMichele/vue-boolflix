@@ -24,6 +24,7 @@ var app = new Vue ({
                  this.list_films = films.data.results;
                  console.log(this.list_films);
                });
+               this.search_films = '';
              }
             }
         }
