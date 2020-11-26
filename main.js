@@ -40,15 +40,27 @@ var app = new Vue ({
          }
      },
 
+        //creo funzione per stabilire quante stelline piene inserire, passandolo al parametro di ogni film
         avgVoteStar(films) {
+            //creo una let a cui assegnerò il valore del voto dichiarato nell'api diviso 2 (dato che le stelline avranno un massimo di 5 e non di 10)
             let number_vote = Math.round(films.vote_average / 2);
-                return number_vote
+            //impostata la media del voto la riporto come valore nella funzione e la arrotondo, in modo da ciclare le stelle piene per quanto è il numero della media voto
+            return number_vote
         },
 
+        //applico la regola inversa per le stelline vuote
         emptyStar(films) {
+            //creo una let che mi dirà il voto restante non assegnato, il quale rappresenterà le stelline vuote
             let rest_vote = 10 - films.vote_average;
+            //applico lo stesso concetto delle stelle piene e restituisco il valore ottenuto
             let number_rest_vote = Math.round(rest_vote / 2);
             return number_rest_vote
-        }
+        },
+
+        //per impostare la copertina di ogni film prendo i parametri, url di base dell'api immagini(inizio), la dimensione dell'immagine presa sul sito in 'poster_size' e la fine dell'url dell'immagine presa dai dati dell'api (finirà sempre con png, jpg, svg)
+        getImgPoster(films) {
+                    //BASE CHIAMATA IMMAGINI,  //(MEDIA) RISOLUZIONE, //DATO API(FINE URL)
+            return 'https://image.tmdb.org/t/p/' + 'w342'  + films.poster_path;
+        },
     }
 });

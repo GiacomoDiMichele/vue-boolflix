@@ -9,25 +9,43 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!--COLLEGAMENTO CON VUE-->
         <div id="root">
+
+            <!--INIZIO HEADER-->
             <header>
                 <div class="header-container">
                     <img src="img/netflix-logo-png-2562.png" alt="">
                 </div>
             </header>
+
+            <!--INIZIO CONTAINER DI RICERCA FILM // SEZIONE DINAMICA-->
             <div class="research-container">
                 <div class="research-films">
                     <input type="search"  v-model="search_films" placeholder="Inserisci il nome del film" name="" value="">
                     <button type="button" @click="searchTypeFilms" name="button"><i class="fas fa-search"></i></button>
                 </div>
             </div>
+
+            <!--CREAZIONE BOX DI OGNI FILM CICLATO ATTRAVERSO IL V-FOR-->
             <div class="films-container">
                 <ul v-for="films in list_films" class="box-film">
+                    <li class="poster-img">
+                        <img :src="getImgPoster(films)">
+                    </li>
+
+                    <!--CREAZIONE DI UNA CONDIZIONE, CON LA QUALE SE CONSIDERATA VERA ASSEGNERO' IL TITOLO DEL FILM, SE FALSA DELLA SERIE TV-->
                     <li>{{ films.title ? films.title : films.name }}</li>
+
+                    <!--TITOLO ORIGINALE-->
                     <li class="">{{ films.original_title }}</li>
+
+                    <!--IMPORTAZIONE DINAMICA TRAMITE :SRC, CONCATENAZIONE DEGLI ELEMENTI PER OTTENERE UN PATH DINAMICO DELL'IMMAGINE, ASSEGNANDO AL FILE LO STESSO NOME DEL DATO ORIGINAL_LANGUAGE-->
                     <li class="image-language">
                         <img :src="'img/' + films.original_language + '.png'" alt="">
                     </li>
+
+                    <!--SOSTITUZIONE VALUTAZIONE MEDIA DEL FILM CON STELLE ATTRAVERSO FUNZIONE DI CALCOLO-->
                     <li class="stars-vote">
                         <i v-for="i in avgVoteStar(films)" class="fas fa-star"></i>
                         <i v-for="i in emptyStar(films)" class="far fa-star"></i>
