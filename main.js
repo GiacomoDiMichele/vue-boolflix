@@ -7,9 +7,6 @@ var app = new Vue ({
         list_films: [
 
         ],
-        list_tv: [
-
-        ]
     },
     methods: {
         //creo una funzione al click che mi andrà a cambiare dinamicamente, attraverso il valore di v-model, la query, e quindi il risultato dei film visualizzato in pagina
@@ -24,7 +21,7 @@ var app = new Vue ({
             //prendo tutta l'api con i dati dei film
              }).then((films) => {
                  //pusho o assegno nella lista film tutti i risultati(dati) dell'api
-                 this.list_films = films.data.results;
+                 this.list_films = this.list_films.concat(films.data.results);
                 });
                //aggancio la ricerca delle serie tv tramite una nuova api, in modo che la funzione cerchi sia nell'api film che serie tv, applicando gli stessi parametri
                axios.get('https://api.themoviedb.org/3/search/tv', {
@@ -34,7 +31,7 @@ var app = new Vue ({
                    }
               }).then((films) => {
                   //assegno i dati dei risultati dell'api serie tv al nuovo array, che conterrà solo i dati serie tv
-                   this.list_tv = films.data.results;
+                   this.list_films = this.list_films.concat(films.data.results)
                 });
             }
          //se cercherò di far partire la ricerca senza aver scritto nulla farò apparire un avviso di mancato inserimento del testo nella barra di ricerca

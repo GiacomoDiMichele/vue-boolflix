@@ -23,7 +23,7 @@
             </div>
             <div class="films-container">
                 <ul v-for="films in list_films" class="box-film">
-                    <li>{{ films.title }}</li>
+                    <li>{{ films.title ? films.title : films.name }}</li>
                     <li class="">{{ films.original_title }}</li>
                     <li class="image-language">
                         <img :src="'img/' + films.original_language + '.png'" alt="">
