@@ -33,6 +33,8 @@ var app = new Vue ({
                   //assegno i dati dei risultati dell'api serie tv al nuovo array, che conterrà solo i dati serie tv
                    this.list_films = this.list_films.concat(films.data.results)
                 });
+                //una volta avviata la ricerca riassegno il valore di base (stringa vuota) al v-model (input)
+                this.search_films = '';
             }
          //se cercherò di far partire la ricerca senza aver scritto nulla farò apparire un avviso di mancato inserimento del testo nella barra di ricerca
          else {
