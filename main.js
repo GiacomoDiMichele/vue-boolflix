@@ -1,3 +1,8 @@
+const api_root_base = 'https://api.themoviedb.org/3';
+const poster_root_base = 'https://image.tmdb.org/t/p/';
+const api_key = 'ef9ceb72102dc577a5c353dc8d030bdc';
+const poster_m_dimensions = 'w342';
+
 var app = new Vue ({
     el: '#root',
     data: {
@@ -62,7 +67,7 @@ var app = new Vue ({
         //per impostare la copertina di ogni film prendo i parametri, url di base dell'api immagini(inizio), la dimensione dell'immagine presa sul sito in 'poster_size' e la fine dell'url dell'immagine presa dai dati dell'api (finirà sempre con png, jpg, svg)
         getImgPoster(films) {
                     //BASE CHIAMATA IMMAGINI,  //(MEDIA) RISOLUZIONE, //DATO API(FINE URL)
-            return 'https://image.tmdb.org/t/p/' + 'w342'  + films.poster_path;
+            return poster_root_base + poster_m_dimensions  + films.poster_path;
         },
     }
 });

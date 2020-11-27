@@ -38,7 +38,7 @@
                         <li>{{ films.title ? films.title : films.name }}</li>
 
                         <!--TITOLO ORIGINALE-->
-                        <li class="">{{ films.original_title }}</li>
+                        <li class="">{{ films.original_title ? films.original_title : films.original_name }}</li>
 
                         <!--IMPORTAZIONE DINAMICA TRAMITE :SRC, CONCATENAZIONE DEGLI ELEMENTI PER OTTENERE UN PATH DINAMICO DELL'IMMAGINE, ASSEGNANDO AL FILE LO STESSO NOME DEL DATO ORIGINAL_LANGUAGE-->
                         <li class="image-language">
